@@ -1,0 +1,211 @@
+body {
+    padding: 0;
+    margin: 0;
+    font-family: 'Lato';
+    background-color: #fff;
+
+    /* definindo as variáveis */
+    --gutterDesktop: 64px;
+    --gutterMobile: 16px;
+
+    --verde: #5CA720;
+    --cinzaBorda: #D9D9D9;
+
+    @media (max-width: 599px) {
+        font-size: 14px;
+    }
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    margin: 24px 0;
+    padding: 16px var(--gutterDesktop);
+
+    position: sticky;
+    top: 0;
+    background: #fff;
+
+    @media (max-width: 599px) {
+        padding-left: var(--gutterMobile);
+        padding-right: var(--gutterMobile);
+    }
+
+    ul {
+        display: flex;
+        list-style: none;
+        margin: 0;
+        padding: 0;
+
+        li {
+            margin: 0 16px;
+            display: flex;
+            align-items: center;
+
+            &:last-child {
+                margin-right: 0;
+            }
+
+            .iconeNav {
+                display: flex;
+                align-items: center; 
+
+                img {
+                    height: 24px;
+                    width: 24px;
+                }
+            }
+        }
+    }
+}
+
+.banner {
+    width: 100%;
+}
+
+.listagemProdutos {
+    .cabecalho {
+        display: flex;
+        justify-content: space-between;
+        font-weight: 600;
+        padding: 16px var(--gutterDesktop);
+        border-bottom: solid 1px var(--cinzaBorda);
+
+        @media (max-width: 599px) {
+            padding-left: var(--gutterMobile);
+            padding-right: var(--gutterMobile);
+        }
+
+        span:last-child {
+            font-size: 14px;
+            font-weight: 400;
+        }
+    }
+
+    .produtos {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        margin: 32px 0;
+
+        @media (max-width: 599px) {
+            padding-left: var(--gutterMobile);
+            padding-right: var(--gutterMobile);
+        }
+
+        .produto {
+            width: 25%;
+            padding: 16px 32px;
+
+            @media (max-width: 599px) {
+                width: 30%
+            }
+
+            .imagemProduto {
+                width: 100%;
+                aspect-ratio: 1 / 1;
+                object-fit: cover;
+                border-radius: 5px;
+            }
+
+            .nomeProduto {
+                margin: 8px 0;
+            }
+
+            .precoProduto span:last-child {
+                font-size: 18px;
+                color: var(--verde);
+                font-weight: 600;
+            }
+        }
+    }
+}
+
+footer {
+    background-color: #F9F9F9;
+    font-weight: 600;
+
+    .footerPrimeiraMetade,
+    .footerSegundaMetade {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 32px var(--gutterDesktop);
+
+        @media (max-width: 599px) {
+            padding-left: var(--gutterMobile);
+            padding-right: var(--gutterMobile);
+        }
+    }
+
+    .footerPrimeiraMetade {
+        border-top: solid 1px var(--cinzaBorda);
+        border-bottom: solid 1px var(--cinzaBorda);
+
+        @media (max-width: 599px) {
+            flex-wrap: wrap;
+        }
+    }
+
+    .newsletter,
+    .linksInstitucionais {
+        list-style: none;
+        line-height: 30px;
+        margin: 0;
+        padding: 0;
+    }
+
+    .linksInstitucionais a {
+        color: #161616;
+        text-decoration: none;
+
+        &:hover {
+            text-decoration: underline;
+        }
+    }
+
+    .newsletter {
+        @media (max-width: 599px) {
+            margin-top: 32px
+        }
+
+        .inputEmail {
+            display: flex;
+        }
+
+        button {
+            background-color: var(--verde);
+            border: none;
+            border-radius: 0 5px 5px 0;
+            color: #FFFFFF;
+            font-weight: 800;
+            padding: 0 16px;
+        }
+
+        input {
+            padding: 8px;
+            background: #FFFFFF;
+            border: var(--cinzaBorda) 1px solid;
+            border-radius: 5px 0 0 5px;
+
+            &:focus {
+                outline: none;
+            }
+        }
+    }
+
+    .footerSegundaMetade {
+        & > div {
+            display: flex;
+            align-items: center;
+        }
+
+        .iconeFooter {
+            margin: 0 12px;
+
+            @media (max-width: 599px) {
+                width: 32px;
+            }
+        }
+    }
+}
